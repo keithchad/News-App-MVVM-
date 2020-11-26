@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#000F75</color>
+    <color name="colorPrimaryDark">#000F75</color>
+    <color name="colorAccent">#000F75</color>
+
+<!--    // Dark Theme Colors-->
+    <color name="darkPrimaryColor">#141414</color>
+    <color name="darkPrimaryDarkColor">#141414</color>
+    <color name="darkBackgroundColor">#141414</color>
+    <color name="darkTextColor">#FAFAFA</color>
+    <color name="darkIconTintColor">#A2A2A2</color>
+
+<!--    // Light Theme Colors-->
+    <color name="lightTextColor">#363636</color>
+    <color name="lightBackgroundColor">#FFFFFF</color>
+
+<!--    // Amoled Theme Colors-->
+    <color name="amoledPrimaryColor">#000000</color>
+    <color name="amoledPrimaryDarkColor">#000000</color>
+    <color name="amoledBackgroundColor">#000000</color>
+
+</resources>

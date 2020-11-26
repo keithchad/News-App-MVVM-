@@ -19,8 +19,6 @@
         <item name="textColor">@color/darkTextColor</item>
         <item name="backgroundColor">@color/darkBackgroundColor</item>
         <item name="android:textColorSecondary">@color/darkIconTintColor</item>
-
-
     </style>
 
 </resources>

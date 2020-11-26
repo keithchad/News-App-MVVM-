@@ -1,8 +1,10 @@
-package com.chad.newsappmvvm;
+package com.chad.newsappmvvm.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.chad.newsappmvvm.R;
 
 public class MainActivity extends AppCompatActivity {
 

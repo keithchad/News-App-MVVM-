@@ -10,13 +10,16 @@ import com.chad.newsappmvvm.databinding.NewsItemTextBinding;
 
 public class ImageViewHolder extends BaseViewHolder {
 
-    public ImageViewHolder(@NonNull View itemView) {
-        super(itemView);
+    NewsItemImageBinding newsItemImageBinding;
+
+    public ImageViewHolder(@NonNull NewsItemImageBinding newsItemImageBinding) {
+        super(newsItemImageBinding.getRoot());
+        this.newsItemImageBinding = newsItemImageBinding;
     }
 
     @Override
     public void bindData(News news) {
-
+        newsItemImageBinding.setNewsItemImage(news);
     }
 
     @Override

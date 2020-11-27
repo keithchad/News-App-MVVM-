@@ -10,13 +10,16 @@ import com.chad.newsappmvvm.databinding.NewsItemTextBinding;
 
 public class TextViewHolder extends BaseViewHolder {
 
-    public TextViewHolder(@NonNull View itemView) {
-        super(itemView);
+    NewsItemTextBinding newsItemTextBinding;
+
+    public TextViewHolder(@NonNull NewsItemTextBinding newsItemTextBinding) {
+        super(newsItemTextBinding.getRoot());
+        this.newsItemTextBinding = newsItemTextBinding;
     }
 
     @Override
     public void bindData(News news) {
-
+        newsItemTextBinding.setNewsItemText(news);
     }
 
     @Override

@@ -41,20 +41,24 @@ public class NewsListAdapter extends ListAdapter<News, BaseViewHolder> {
     @Override
     public BaseViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-        if (viewType == Constants.VIEW_TYPE_NEWS_IMAGE) {
-            NewsItemImageBinding newsItemImageBinding = DataBindingUtil.inflate(LayoutInflater.from(parent.getContext()),
-                    R.layout.news_item_image, parent, false);
-            return new ImageViewHolder(newsItemImageBinding);
+        switch (viewType) {
+            case Constants.VIEW_TYPE_NEWS_TEXT:
+                NewsItemTextBinding newsItemTextBinding = DataBindingUtil.inflate(LayoutInflater.from(parent.getContext()),
+                        R.layout.news_item_text, parent, false);
+                return new TextViewHolder(newsItemTextBinding);
+            case Constants.VIEW_TYPE_NEWS_IMAGE:
+                NewsItemImageBinding newsItemImageBinding = DataBindingUtil.inflate(LayoutInflater.from(parent.getContext()),
+                        R.layout.news_item_image, parent, false);
+                return new ImageViewHolder(newsItemImageBinding);
+            default:
+                NewsItemTextBinding defaultNewsItemTextBinding = DataBindingUtil.inflate(LayoutInflater.from(parent.getContext()),
+                        R.layout.news_item_text, parent, false);
+                return new TextViewHolder(defaultNewsItemTextBinding);
         }
-        NewsItemTextBinding defaultNewsItemTextBinding = DataBindingUtil.inflate(LayoutInflater.from(parent.getContext()),
-                R.layout.news_item_text, parent, false);
-        return new TextViewHolder(defaultNewsItemTextBinding);
     }
 
     @Override
     public void onBindViewHolder(@NonNull BaseViewHolder holder, int position) {
-
         holder.bindData(getItem(position));
-
     }
 }

@@ -40,6 +40,8 @@
             android:text="@{NewsItemText.content}"
             android:textColor="?attr/textColor"
             android:fontFamily="@font/ubuntu_medium"
+            android:maxLines="5"
+            android:lineSpacingExtra="4sp"
             app:layout_constraintBottom_toTopOf="@+id/newsItemUserImage"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

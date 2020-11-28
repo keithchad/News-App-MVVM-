@@ -28,7 +28,7 @@ public class NewsListAdapter extends ListAdapter<News, BaseViewHolder> {
         this.itemClickEvent = listener;
     }
 
-    protected NewsListAdapter(@NonNull DiffUtil.ItemCallback<News> diffCallback) {
+    public NewsListAdapter(@NonNull DiffUtil.ItemCallback<News> diffCallback) {
         super(diffCallback);
     }
 

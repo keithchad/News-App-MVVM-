@@ -2,6 +2,8 @@ package com.chad.newsappmvvm.util.Adapter;
 
 import android.widget.ImageView;
 
+import androidx.core.content.ContextCompat;
+
 import com.bumptech.glide.Glide;
 import com.chad.newsappmvvm.R;
 
@@ -45,4 +47,15 @@ public class BindingAdapter {
                 imageView.setBackgroundColor(imageView.getContext().getResources().getColor(R.color.colorRed));
         }
     }
+
+    @androidx.databinding.BindingAdapter("set_checked")
+    public static void toggleFav(ImageView imageView, boolean isFav) {
+
+        if (isFav) {
+            imageView.setColorFilter(ContextCompat.getColor(imageView.getContext(), R.color.colorRed));
+        } else {
+            imageView.setColorFilter(ContextCompat.getColor(imageView.getContext(), R.color.darkIconTintColor));
+        }
+    }
+
 }

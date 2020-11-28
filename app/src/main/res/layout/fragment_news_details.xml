@@ -1,16 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".UI.Fragments.NewsDetailsFragment">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <data>
+
+        <variable
+            name="NewsItemData"
+            type="com.chad.newsappmvvm.data.model.News" />
+
+    </data>
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="NEWS DETAILS"
-        android:textSize="30sp"
-        android:layout_centerInParent="true"/>
+        android:layout_height="match_parent">
 
-</RelativeLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/textDetailTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:context=".UI.Fragments.NewsDetailsFragment"
+            android:background="?attr/backgroundColor">
+
+            <ImageView
+                android:id="@+id/newsDetailsImage"
+                android:layout_width="0dp"
+                android:layout_height="210dp"
+                android:contentDescription="@string/app_name"
+                glide_url="@{NewsItemData.newsImage}"
+                android:scaleType="centerCrop"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/userDetailsImage"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:contentDescription="@string/app_name"
+                glide_circular="@{NewsItemData.userImage}"
+                android:layout_marginStart="24dp"
+                app:layout_constraintBottom_toBottomOf="@+id/newsDetailsImage"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/newsDetailsImage" />
+
+            <TextView
+                android:id="@+id/textDetailsTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="@font/ubuntu_bold"
+                android:text="@{NewsItemData.title}"
+                android:textColor="?attr/textColor"
+                android:textSize="36sp"
+                android:lineSpacingExtra="36sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/userDetailsImage" />
+
+            <TextView
+                android:id="@+id/textDetailsUsernameDate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:text="@{NewsItemData.userName}"
+                android:fontFamily="@font/ubuntu_medium"
+                android:includeFontPadding="false"
+                android:textColor="?attr/textColor"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textDetailsTitle" />
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/app_name"
+                android:layout_marginStart="8dp"
+                android:src="@drawable/ic_favorite"
+                set_checked="@{NewsItemData.fav}"
+                app:layout_constraintBottom_toBottomOf="@+id/textDetailsUsernameDate"
+                app:layout_constraintStart_toEndOf="@+id/textDetailsUsernameDate"
+                app:layout_constraintTop_toTopOf="@+id/textDetailsUsernameDate" />
+
+            <TextView
+                android:id="@+id/textDetailsContent"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="@{NewsItemData.content}"
+                android:textSize="30sp"
+                android:fontFamily="@font/ubuntu_regular"
+                android:includeFontPadding="false"
+                android:textColor="?attr/textColor"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textDetailsUsernameDate" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</layout>

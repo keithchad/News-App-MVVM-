@@ -4,8 +4,15 @@
     <color name="colorPrimaryDark">#000F75</color>
     <color name="colorAccent">#000F75</color>
 
-    <color name="colorBlack">#000000</color>
     <color name="colorWhite">#FFFFFF</color>
+    <color name="colorBlack">#000000</color>
+
+<!--    News Image Background-->
+    <color name="colorPurple">#905EE8</color>
+    <color name="colorRed">#F93535</color>
+    <color name="colorBlue">#008DFC</color>
+    <color name="colorYellow">#FED149</color>
+    <color name="colorBlackBackground">#1E1E1E</color>
 
 <!--    // Dark Theme Colors-->
     <color name="darkPrimaryColor">#141414</color>
